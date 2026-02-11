@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warta Lingkungan - Analisis Dampak Polusi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f7f3eb;
+            font-family: 'Source Serif Pro', serif;
+            color: #1a1a1a;
+        }
+        .newspaper-header {
+            border-bottom: 5px double #000;
+            margin-bottom: 1.5rem;
+        }
+        .newspaper-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+        }
+        .column-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        @media (min-width: 1024px) {
+            .column-layout {
+                grid-template-columns: 3fr 1fr;
+            }
+            .article-content {
+                column-count: 2;
+                column-gap: 2.5rem;
+            }
+        }
+        .dropcap {
+            float: left;
+            font-size: 4.5rem;
+            line-height: 0.8;
+            padding-right: 12px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        .news-img {
+            filter: sepia(10%) contrast(1.1);
+            border: 1px solid #000;
+            padding: 3px;
+            background: #fff;
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .caption {
+            font-size: 0.8rem;
+            font-style: italic;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+        .headline {
+            font-family: 'Playfair Display', serif;
+            line-height: 1.1;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+        }
+        .sub-headline {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+            border-left: 4px solid #000;
+            padding-left: 8px;
+        }
+
+        /* Optimalisasi untuk Print */
+        @media print {
+            @page {
+                size: A4;
+                margin: 1.2cm;
+            }
+            body {
+                background-color: white !important;
+                color: black !important;
+                font-size: 9pt;
+            }
+            .max-w-6xl {
+                max-width: 100% !important;
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            .newspaper-title {
+                font-size: 2.5rem !important;
+            }
+            .column-layout {
+                display: block !important;
+            }
+            .article-content {
+                column-count: 2 !important;
+                column-gap: 1.2cm !important;
+            }
+            aside {
+                display: none !important;
+            }
+            .news-img {
+                filter: grayscale(100%) !important;
+                max-height: 220px;
+            }
+            .image-block, h3, .sub-headline {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-10">
+    <div class="max-w-6xl mx-auto">
+        <!-- Judul Koran -->
+        <header class="newspaper-header text-center">
+            <h1 class="newspaper-title">Warta Lingkungan</h1>
+            <div class="border-t border-black mt-1 py-1 text-sm italic">
+                "Mengupas Dampak dan Realita di Tengah Krisis Ekosistem Global"
+            </div>
+        </header>
+
+        <div class="column-layout">
+            <main>
+                <h2 class="headline font-bold">Bumi Diambang Batas: Analisis Mendalam Dampak Tiga Polusi Utama yang Mengancam Kelangsungan Hidup</h2>
+                
+                <div class="article-content text-justify leading-relaxed">
+                    <p class="mb-4">
+                        <span class="dropcap">K</span>ondisi planet kita saat ini tidak lagi sekadar "peringatan", melainkan telah memasuki fase darurat. Interaksi toksik antara pencemaran udara, air, dan tanah menciptakan siklus kerusakan yang saling menguatkan. Dampaknya tidak hanya terasa pada lingkungan fisik, tetapi telah merambah jauh ke dalam struktur biologi manusia dan kestabilan ekonomi global.
+                    </p>
+
+                    <!-- Bagian Udara -->
+                    <div class="image-block mb-8">
+                        <img id="img-udara" class="news-img" src="https://www.greenpeace.org/static/planet4-indonesia-stateless/2024/07/cf7fe0c1-gp0stxgdt_low-res-800px.jpg" alt="Pencemaran Udara">
+                        <p class="caption">Fig 1. Kabut toksik hasil emisi industri manufaktur dan transportasi di pusat kota.</p>
+                        
+                        <h3 class="font-bold text-xl mb-2 text-red-900">I. Udara: Krisis Pernapasan Global</h3>
+                        <p class="mb-3 text-sm">
+                            Pencemaran udara adalah pembunuh senyap yang paling efektif di era modern. Partikel PM2.5, yang diameternya lebih kecil dari rambut manusia, mampu melewati barisan pertahanan alami tubuh, masuk ke paru-paru, dan menyusup ke pembuluh darah.
+                        </p>
+                        
+                        <h4 class="sub-headline">Dampak Kesehatan</h4>
+                        <p class="mb-3 text-sm">
+                            Paparan jangka panjang memicu penyakit paru obstruktif kronis (PPOK), asma akut, hingga kanker paru-paru. Penelitian terbaru dari WHO mengaitkan polusi udara dengan peningkatan risiko stroke dan penyakit jantung iskemik. Pada anak-anak, kualitas udara buruk menghambat pertumbuhan paru-paru dan menurunkan fungsi kognitif.
+                        </p>
+                        
+                        <h4 class="sub-headline">Dampak Lingkungan</h4>
+                        <p class="mb-4 text-sm">
+                            Selain pemanasan global akibat gas rumah kaca, polusi udara menyebabkan fenomena hujan asam. Sulfur dioksida dan nitrogen oksida bereaksi di atmosfer, jatuh sebagai hujan yang menurunkan pH tanah dan air permukaan, mematikan mikroorganisme tanah dan merusak lapisan lilin pelindung pada daun tumbuhan, yang berujung pada kegagalan ekosistem hutan.
+                        </p>
+                    </div>
+
+                    <!-- Bagian Air -->
+                    <div class="image-block mb-8">
+                        <img id="img-air" class="news-img" src="https://luckypolytank.com/wp-content/uploads/2025/02/dampak-pencemaran-air.webp" alt="Pencemaran Air">
+                        <p class="caption">Fig 2. Akumulasi limbah kimia dan sampah domestik yang mengubah warna aliran sungai.</p>
+                        
+                        <h3 class="font-bold text-xl mb-2 text-blue-900">II. Air: Degradasi Sumber Kehidupan</h3>
+                        <p class="mb-3 text-sm">
+                            Krisis air bersih bukan lagi ancaman masa depan, melainkan realita hari ini. Ketika sungai dan laut tercemar, seluruh sistem penopang hidup manusia terancam secara fundamental.
+                        </p>
+                        
+                        <h4 class="sub-headline">Dampak Kesehatan</h4>
+                        <p class="mb-3 text-sm">
+                            Konsumsi air yang terkontaminasi logam berat seperti merkuri dan timbal menyebabkan kerusakan sistem saraf pusat, gagal ginjal, dan gangguan reproduksi. Penyakit yang ditularkan melalui air (water-borne diseases) seperti kolera dan disentri tetap menjadi penyebab utama kematian bayi di wilayah dengan pengolahan limbah yang buruk. Selain itu, bioakumulasi mikroplastik di dalam jaringan ikan yang dikonsumsi manusia dapat memicu gangguan endokrin.
+                        </p>
+                        
+                        <h4 class="sub-headline">Dampak Lingkungan</h4>
+                        <p class="mb-4 text-sm">
+                            Pencemaran air menyebabkan kerusakan masif pada biodiversitas akuatik. Fenomena *algal bloom* akibat limbah nutrisi menciptakan zona mati (*dead zones*) yang kekurangan oksigen, memicu kematian massal ikan dan terumbu karang. Hal ini menghancurkan mata pencaharian nelayan dan mengganggu kestabilan rantai makanan di samudera.
+                        </p>
+                    </div>
+
+                    <!-- Bagian Tanah -->
+                    <div class="image-block mb-8">
+                        <img id="img-tanah" class="news-img" src="https://citarumharum.jabarprov.go.id/eusina/uploads/2022/01/Pencemaran-tanah.jpeg" alt="Pencemaran Tanah">
+                        <p class="caption">Fig 3. Lahan pertanian yang terdegradasi akibat pembuangan limbah B3 secara ilegal.</p>
+                        
+                        <h3 class="font-bold text-xl mb-2 text-green-900">III. Tanah: Kematian Fondasi Pangan</h3>
+                        <p class="mb-3 text-sm">
+                            Pencemaran tanah seringkali tidak terlihat secara instan, namun efeknya bersifat permanen dan sangat sulit dipulihkan (*remediasi*).
+                        </p>
+                        
+                        <h4 class="sub-headline">Dampak Kesehatan</h4>
+                        <p class="mb-3 text-sm">
+                            Tanah yang tercemar menyalurkan zat beracun ke dalam tanaman pangan. Konsumsi hasil tani dari tanah yang terkontaminasi pestisida atau logam berat secara terus-menerus meningkatkan risiko kelainan genetik dan kanker. Selain itu, uap kimia dari tanah yang tercemar (uap *VOC*) dapat merembes ke bangunan di atasnya, meracuni udara dalam ruangan secara kronis.
+                        </p>
+                        
+                        <h4 class="sub-headline">Dampak Lingkungan</h4>
+                        <p class="mb-4 text-sm">
+                            Pencemaran tanah merusak ekosistem bawah tanah yang vital. Matinya cacing tanah dan jamur mikoriza menyebabkan tanah kehilangan kemampuan mengikat air dan nutrisi, memicu erosi besar-besaran dan desertifikasi (perubahan lahan menjadi gurun). Tanah yang rusak tidak lagi mampu menyerap karbon, yang justru memperburuk krisis iklim global.
+                        </p>
+                    </div>
+
+                    <p class="mt-4 italic font-bold border-t border-black pt-4 text-center">Laporan Khusus Investigasi oleh: Tim CBI - Redaksi Sains</p>
+                </div>
+            </main>
+
+            <!-- Sidebar -->
+            <aside class="border-l-0 lg:border-l border-black lg:pl-6">
+                <div class="bg-white p-4 border border-black mb-6">
+                    <h4 class="font-bold text-lg border-b border-black mb-2 uppercase text-sm">Kesimpulan</h4>
+                    <p class="text-sm italic text-justify leading-snug">"Ketiga jenis pencemaran ini saling bertaut. Udara yang kotor jatuh sebagai hujan asam ke tanah, tanah yang beracun merembes ke air tanah, dan air yang tercemar menguap kembali ke atmosfer. Tidak ada solusi parsial; kita butuh transformasi sistemik."</p>
+                </div>
+
+                <div class="border-y-4 border-black py-4 mb-6">
+                    <h4 class="font-bold text-sm uppercase mb-3 text-center">Tingkat Ancaman</h4>
+                    <div class="text-[11px] space-y-3">
+                        <div class="flex justify-between border-b border-gray-300 pb-1"><span>Respirasi Global:</span> <span class="text-red-700 font-bold">EKSTREM</span></div>
+                        <div class="flex justify-between border-b border-gray-300 pb-1"><span>Ketersediaan Air:</span> <span class="text-red-700 font-bold">DARURAT</span></div>
+                        <div class="flex justify-between border-b border-gray-300 pb-1"><span>Ketahanan Pangan:</span> <span class="text-orange-700 font-bold">KRITIS</span></div>
+                    </div>
+                </div>
+
+                <div class="sticky top-10">
+                    <div class="bg-black text-white p-4 text-center">
+                        <p class="font-bold text-xs leading-tight mb-2 tracking-widest uppercase">Panggilan Aksi</p>
+                        <p class="text-[10px] italic">"Setiap pohon yang Anda tanam adalah satu tarikan napas bagi bumi."</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <footer class="mt-10 pt-4 border-t border-black text-center text-[10px] uppercase tracking-widest">
+            Warta Lingkungan &copy; 2026 - Laporan Seri Investigasi Global No. 12
+        </footer>
+    </div>
+</body>
+</html>
+
